@@ -5,7 +5,7 @@ const port=8081
 module.exports={
     Init(){
         app.use('*',(req,res,next)=>{
-            console.log(req.method, req.baseUrl)
+            console.log(req.method, req.baseUrl ,res.statusCode)
             next()
         })
         app.use(routes)

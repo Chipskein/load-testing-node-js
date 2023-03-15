@@ -1,11 +1,13 @@
 config:
   target: "http://localhost:8081"
   phases:
-    - duration: 120
+    - duration: 60
       arrivalRate: 100
+      name: "warm up"
 
-    - duration: 300
+    - duration: 200
       arrivalRate: 500
+      name: "test"
 
 
 scenarios:
