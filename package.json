@@ -2,8 +2,8 @@
   "scripts": {
     "express": "node express/src/cluster.js",
     "fastify": "node fastify/src/cluster.js",
-    "load-fastify": "npx artillery run load-fastify.yml",
-    "load-express": "npx artillery run load-express.yml"
+    "load-fastify": "npx artillery run --output report-fastify.json load-fastify.yml",
+    "load-express": "npx artillery run --output report-express.json load-express.yml"
   },
   "dependencies": {
     "artillery": "^2.0.0-30",

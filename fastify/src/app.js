@@ -1,5 +1,23 @@
 const fastify=require('fastify')
-const app=fastify()
+const app=fastify({
+    logger:{
+        serializers: {
+            res (reply) {
+                return {
+                  statusCode: reply.statusCode
+                }
+            },
+            req (request) {
+                return {
+                      method: request.method,
+                      url: request.url,
+                      path: request.routerPath,
+                      parameters: request.params
+                };
+            }
+        }
+  }
+})
 const controller=require('./controller')
 const port=8082
 module.exports={
