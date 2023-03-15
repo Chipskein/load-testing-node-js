@@ -1,0 +1,26 @@
+config:
+  target: "http://localhost:8082"
+  phases:
+    - duration: 60
+      arrivalRate: 100
+      name: "warm up"
+
+    - duration: 200
+      arrivalRate: 500
+      name: "test"
+
+
+scenarios:
+  - name: "Testando"
+    flow:
+      - get:
+          url: "/create"
+          capture:
+            - json: "$.path"
+              as: "path"
+      - think: 1
+      - get:
+          url: "/read?path={{ path }}"
+      - think: 2
+      - get:
+          url: "/delete?path={{ path }}"

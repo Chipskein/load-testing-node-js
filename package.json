@@ -1,11 +1,13 @@
 {
   "scripts": {
-    "server":"node src/cluster.js",
-    "load":"artillery run load.yml",
-    "start":" npm run server & npm run load"
+    "express": "node express/src/cluster.js",
+    "fastify": "node fastify/src/cluster.js",
+    "load-fastify": "npx artillery run load-fastify.yml",
+    "load-express": "npx artillery run load-express.yml"
   },
   "dependencies": {
     "artillery": "^2.0.0-30",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "fastify": "^4.14.1"
   }
 }
