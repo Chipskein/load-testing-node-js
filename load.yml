@@ -2,7 +2,7 @@ config:
   target: "http://localhost:8081"
   phases:
     - duration: 120
-      arrivalRate: 60
+      arrivalRate: 100
  
 scenarios:
   - name: "Testando"
