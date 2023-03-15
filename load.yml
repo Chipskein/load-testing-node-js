@@ -8,4 +8,13 @@ scenarios:
   - name: "Testando"
     flow:
       - get:
-          url: "/"
+          url: "/create"
+          capture:
+            - json: "$.path"
+              as: "path"
+      - think: 1
+      - get:
+          url: "/read?path={{ path }}"
+      - think: 2
+      - get:
+          url: "/delete?path={{ path }}"
