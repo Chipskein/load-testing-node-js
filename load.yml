@@ -3,7 +3,11 @@ config:
   phases:
     - duration: 120
       arrivalRate: 100
- 
+
+    - duration: 300
+      arrivalRate: 500
+
+
 scenarios:
   - name: "Testando"
     flow:

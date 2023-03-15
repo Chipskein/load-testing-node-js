@@ -6,7 +6,7 @@ const fsP=require('fs/promises');
 module.exports={
     async create(_,res){
         try{
-            const randomname=`file-${Math.random()*999}`
+            const randomname=`file-${Math.random()*99999}`
             const datafile_path=`${path.resolve()}/src/data/${randomname}.txt`
             const data=crypto.randomBytes(10000)
             const stream=fs.createWriteStream(datafile_path)
